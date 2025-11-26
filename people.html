@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ค้นหาบุคลากร</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#10B981', // Emerald 500
+                        'light-green': '#D1FAE5',  // Emerald 100
+                    }
+                }
+            }
+        }
+    </script>
+    
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <header class="bg-primary-green text-white py-4 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-2xl font-bold flex items-center justify-center">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                บุคลากรแผนกวิชาช่างไฟฟ้า
+            </h1>
+            <p class="text-sm mt-1">ค้นหาข้อมูลบุคลากรตามรายชื่อ ตำแหน่ง และหลักสูตร</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8 border-t-4 border-light-green">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                ค้นหาอย่างรวดเร็ว
+            </h2>
+            
+            <div class="flex flex-wrap items-end space-y-4 md:space-y-0 md:flex-row md:space-x-4">
+                
+                <input type="text" placeholder="ค้นหาชื่อบุคลากร..." class="w-full md:w-auto flex-grow min-w-0 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-primary-green transition duration-150" />
+                
+                <button class="flex items-center justify-center bg-primary-green hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 min-w-[100px]">
+                    <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                    ค้นหา
+                </button>
+                
+                <select class="w-full md:w-auto border border-gray-300 rounded-lg py-2 px-4 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-primary-green transition duration-150 min-w-[150px]">
+                    <option>ทั้งหมด</option>
+                    <option>แผนกวิชาช่างไฟฟ้า</option>
+                </select>
+                
+                <select class="w-full md:w-auto border border-gray-300 rounded-lg py-2 px-4 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-primary-green transition duration-150 min-w-[150px]">
+                    <option>เรียกประเภทงาน</option>
+                    <option>อาจารย์</option>
+                </select>
+                
+            </div>
+            
+             <div class="mt-4 flex flex-wrap items-center justify-between text-sm text-gray-500 border-t pt-4">
+                <p>
+                    <span class="text-xl font-bold text-primary-green">พบทั้งหมด: 24 รายการ</span>
+                </p>
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" id="checkFilter" class="form-checkbox text-primary-green rounded h-4 w-4" checked>
+                    <label for="checkFilter">แสดงเฉพาะช่างไฟฟ้า</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-gray-600 mb-6 flex items-center justify-between cursor-pointer border-b pb-2">
+             <h3 class="text-lg font-semibold flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707v4.586l-4 4v-4.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
+                ตัวกรองขั้นสูง
+             </h3>
+             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            <div class="rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg bg-light-green/20">
+                <div class="w-full h-40 bg-gray-200 border-b-4 border-white"></div>
+                <div class="p-4">
+                    <h4 class="text-gray-800 font-semibold text-base mb-2">นางสาวสุชาวดี จันสีหา</h4>
+                    
+                    <p class="flex items-center text-sm text-gray-600 mb-1">
+                        <svg class="w-4 h-4 mr-1 text-primary-green" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707l-.707-.707V8a6 6 0 00-6-6zM10 18a3 3 0 110-6 3 3 0 010 6z"></path></svg>
+                        แผนกวิชาช่างไฟฟ้า
+                    </p>
+                    
+                    <p class="flex items-center text-sm text-gray-600 mb-1">
+                        <svg class="w-4 h-4 mr-1 text-primary-green" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+                        ตำแหน่ง: ครูผู้สอน
+                    </p>
+                </div>
+            </div>
+
+            <div class="rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg bg-light-green/50">
+                <div class="w-full h-40 bg-gray-200 border-b-4 border-white"></div>
+                <div class="p-4">
+                    <h4 class="text-gray-800 font-semibold text-base mb-2">นางสาวอุษณีย์ สุนิกร</h4>
+                    <p class="flex items-center text-sm text-gray-600 mb-1">
+                        <svg class="w-4 h-4 mr-1 text-primary-green" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707l-.707-.707V8a6 6 0 00-6-6zM10 18a3 3 0 110-6 3 3 0 010 6z"></path></svg>
+                        แผนกวิชาช่างไฟฟ้า
+                    </p>
+                    <p class="flex items-center text-sm text-gray-600 mb-1">
+                        <svg class="w-4 h-4 mr-1 text-primary-green" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+                        ตำแหน่ง: ผู้อำนวยการ
+                    </p>
+                    <a href="#" class="inline-block text-sm font-semibold text-white bg-primary-green hover:bg-green-700 py-2 px-4 rounded-lg transition duration-300 w-full text-center mt-3">
+                        ดูข้อมูลผู้สอน
+                    </a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg bg-light-green/50">
+                <div class="w-full h-40 bg-gray-200 border-b-4 border-white"></div>
+                <div class="p-4">
+                    <h4 class="text-gray-800 font-semibold text-base mb-2">นางสาวเกศสุดา ปาภา</h4>
+                    <p class="flex items-center text-sm text-gray-600 mb-1">
+                        <svg class="w-4 h-4 mr-1 text-primary-green" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707l-.707-.707V8a6 6 0 00-6-6zM10 18a3 3 0 110-6 3 3 0 010 6z"></path></svg>
+                        แผนกวิชาช่างไฟฟ้า
+                    </p>
+                    <p class="flex items-center text-sm text-gray-600 mb-1">
+                        <svg class="w-4 h-4 mr-1 text-primary-green" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+                        ตำแหน่ง: ผู้อำนวยการ
+                    </p>
+                    <a href="#" class="inline-block text-sm font-semibold text-white bg-primary-green hover:bg-green-700 py-2 px-4 rounded-lg transition duration-300 w-full text-center mt-3">
+                        ดูข้อมูลผู้สอน
+                    </a>
+                </div>
+            </div>
+
+            <div class="rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg bg-light-green/50">
+                <div class="w-full h-40 bg-gray-200 border-b-4 border-white"></div>
+                <div class="p-4">
+                    <h4 class="text-gray-800 font-semibold text-base mb-2">นายขวัญชัย เนตรแสงศรี</h4>
+                    <p class="flex items-center text-sm text-gray-600 mb-1">
+                        <svg class="w-4 h-4 mr-1 text-primary-green" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707l-.707-.707V8a6 6 0 00-6-6zM10 18a3 3 0 110-6 3 3 0 010 6z"></path></svg>
+                        แผนกวิชาช่างไฟฟ้า
+                    </p>
+                    <p class="flex items-center text-sm text-gray-600 mb-1">
+                        <svg class="w-4 h-4 mr-1 text-primary-green" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+                        ตำแหน่ง: ผู้อำนวยการ
+                    </p>
+                    <a href="#" class="inline-block text-sm font-semibold text-white bg-primary-green hover:bg-green-700 py-2 px-4 rounded-lg transition duration-300 w-full text-center mt-3">
+                        ดูข้อมูลผู้สอน
+                    </a>
+                </div>
+            </div>
+
+            </div>
+    </main>
+
+</body>
+</html>
