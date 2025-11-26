@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>แผนกช่างไฟฟ้า | วิทยาลัยเทคนิคเลย</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#1E8A3A">
+  <style>
+    :root{
+      --green:#1E8A3A;
+      --green-2:#2FA34A;
+      --light:#F7FBF6;
+      --dark:#0B3B1F;
+      --muted:#6B6B6B;
+      --card-radius:16px;
+      font-family: 'Kanit', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--light),#ffffff);color:#04301a}
+    header{background:linear-gradient(90deg,var(--green),var(--green-2));color:white;padding:40px 20px;border-bottom-left-radius:24px;border-bottom-right-radius:24px}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .brand{display:flex;align-items:center;gap:16px}
+    .logo{width:72px;height:72px;border-radius:12px;background:white;display:grid;place-items:center;color:var(--green);font-weight:800;font-size:22px;box-shadow:0 6px 18px rgba(30,138,58,0.18)}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:8px 0 0;opacity:0.95}
+
+    main{padding:28px 0}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
+    .card{background:white;border-radius:var(--card-radius);padding:18px;box-shadow:0 8px 30px rgba(4,48,26,0.06)}
+
+    /* About */
+    .hero{display:flex;gap:20px;align-items:center}
+    .hero .text{flex:1}
+    .cta{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:12px;background:var(--dark);color:white;text-decoration:none;font-weight:600}
+
+    /* Courses */
+    .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
+    .course{border-left:6px solid var(--green);padding:12px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfff9)}
+    .course h4{margin:0}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Faculty */
+    .faculty{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+    .person{display:flex;gap:12px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--green),var(--green-2));display:grid;place-items:center;color:white;font-weight:700}
+
+    /* Quick info */
+    .info-list{display:flex;flex-direction:column;gap:10px}
+    .info-item{display:flex;align-items:center;gap:12px}
+    .dot{width:12px;height:12px;border-radius:4px;background:var(--green)}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:110px;object-fit:cover;border-radius:10px}
+
+    footer{padding:28px 0;text-align:center;color:var(--muted);font-size:14px}
+
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      header{padding:28px 16px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <div class="logo">ET</div>
+        <div>
+          <h1>แผนกช่างไฟฟ้า<br><small style="font-weight:600;opacity:0.95">วิทยาลัยเทคนิคเลย</small></h1>
+          <p class="lead">เตรียมนักปฏิบัติด้านระบบไฟฟ้าอุตสาหกรรม ระบบควบคุม และการติดตั้งไฟฟ้าตามมาตรฐานสากล</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <section>
+        <div class="card hero">
+          <div class="text">
+            <h2>ภารกิจของเรา</h2>
+            <p class="muted">แผนกมุ่งพัฒนาทักษะวิชาชีพและจิตสำนึกความปลอดภัย เพื่อให้นักศึกษาเป็นช่างไฟฟ้าที่มีคุณภาพและพร้อมทำงานจริง</p>
+            <a class="cta" href="#contact">ติดต่อรับข้อมูลเพิ่มเติม</a>
+            <div style="margin-top:18px">
+              <h3>หลักสูตรเด่น</h3>
+              <div class="courses">
+                <div class="course"><h4>ช่างไฟฟ้ากำลัง</h4><p class="muted">ระบบแรงต่ำ/แรงสูง, การติดตั้งหม้อแปลง</p></div>
+                <div class="course"><h4>ระบบควบคุม PLC</h4><p class="muted">อุตสาหกรรมอัตโนมัติและการเขียนโปรแกรม PLC</p></div>
+                <div class="course"><h4>ระบบไฟฟ้าอาคาร</h4><p class="muted">การออกแบบวงจร ติดตั้ง และบำรุงรักษา</p></div>
+                <div class="course"><h4>พลังงานทดแทน</h4><p class="muted">โซลาร์เซลล์และการจัดการพลังงาน</p></div>
+              </div>
+            </div>
+          </div>
+          <div style="width:320px;display:flex;flex-direction:column;gap:12px">
+            <div style="background:linear-gradient(180deg,#ffffff,#f0fff4);padding:14px;border-radius:12px;text-align:center">
+              <strong>ห้องปฏิบัติการสาธิต</strong>
+              <p class="muted" style="margin:8px 0 0">อุปกรณ์ครบครัน ทั้งมอเตอร์ ทรานส์ฟอร์เมอร์ และแผงควบคุม</p>
+            </div>
+            <div style="padding:12px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green),var(--green-2));color:white">
+              <div style="font-weight:700">รับนักศึกษาใหม่ทุกปี</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>กิจกรรมและโครงการ</h3>
+          <ul class="muted">
+            <li>ฝึกงานร่วมกับอุตสาหกรรมเครื่องจักรและสายการผลิต</li>
+            <li>โครงการติดตั้งระบบไฟฟ้าชุมชน</li>
+            <li>การแข่งขันทักษะฝีมือระดับภาค</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>ผลงานนักศึกษา</h3>
+          <p class="muted">โครงการออกแบบและติดตั้งระบบโซลาร์เซลล์ชุมชนขนาดเล็ก ระบบควบคุมประตูอัตโนมัติ และระบบควบคุมมอเตอร์ในโรงงาน</p>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>แกลเลอรี</h3>
+          <div class="gallery" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1520975698517-6b3d9b1d1967?auto=format&fit=crop&w=800&q=60" alt="lab equipment">
+            <img src="https://images.unsplash.com/photo-1508873699372-7ae5d9f2daf6?auto=format&fit=crop&w=800&q=60" alt="students workshop">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=60" alt="solar panels">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=60" alt="control panel">
+            <img src="https://images.unsplash.com/photo-1516280030429-1f1f6d5f7b3a?auto=format&fit=crop&w=800&q=60" alt="student project">
+            <img src="https://images.unsplash.com/photo-1563245379-9ea1f9b2d5c6?auto=format&fit=crop&w=800&q=60" alt="motor lab">
+          </div>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>ข้อมูลด่วน</h3>
+          <div class="info-list">
+            <div class="info-item"><div class="dot"></div><div><strong>ที่ตั้ง:</strong> อาคาร 3 ชั้น 2 วิทยาลัยเทคนิคเลย</div></div>
+            <div class="info-item"><div class="dot"></div><div><strong>โทร:</strong> 042-xxx-xxxx</div></div>
+            <div class="info-item"><div class="dot"></div><div><strong>อีเมล:</strong> elect@loeitc.ac.th</div></div>
+            <div class="info-item"><div class="dot"></div><div><strong>เปิดรับสมัคร:</strong> ทุกปี (ดูรายละเอียดภายใน)</div></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>คณาจารย์</h3>
+          <div class="faculty">
+            <div class="person"><div class="avatar">อจ<br>A</div><div><strong>อ.สมชาย</strong><div class="muted">หัวหน้าแผนก</div></div></div>
+            <div class="person"><div class="avatar">อจ<br>B</div><div><strong>อ.พิมพ์ใจ</strong><div class="muted">ช่างไฟฟ้ากำลัง</div></div></div>
+            <div class="person"><div class="avatar">อจ<br>C</div><div><strong>อ.วัฒนา</strong><div class="muted">ควบคุมอุตสาหกรรม</div></div></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>ติดต่อ</h3>
+          <form id="contact" onsubmit="handleSubmit(event)">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <input type="text" id="name" placeholder="ชื่อ-นามสกุล" required style="padding:10px;border-radius:10px;border:1px solid #e6efe9">
+              <input type="email" id="email" placeholder="อีเมล" required style="padding:10px;border-radius:10px;border:1px solid #e6efe9">
+              <textarea id="msg" placeholder="ข้อความ" rows="4" style="padding:10px;border-radius:10px;border:1px solid #e6efe9"></textarea>
+              <button type="submit" style="padding:10px;border-radius:10px;background:var(--green);color:white;border:none;font-weight:600">ส่งข้อความ</button>
+            </div>
+          </form>
+          <script>
+            function handleSubmit(e){
+              e.preventDefault();
+              const name=document.getElementById('name').value||'ผู้ใช้';
+              alert(name+" ขอบคุณสำหรับข้อความ! เราจะติดต่อกลับเร็วๆ นี้");
+              e.target.reset();
+            }
+          </script>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="card" style="background:transparent;box-shadow:none;padding:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <div>© วิทยาลัยเทคนิคเลย — แผนกช่างไฟฟ้า</div>
+          <div class="muted">ออกแบบโดยทีมสารสนเทศวิทยาลัย</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
